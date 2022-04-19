@@ -1,0 +1,43 @@
+2022.03.23-12:16:56.151[32m info [39m [caliper] [default-observer] 	[send review function - 30 requests Round 0 Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+2022.03.23-12:17:01.155[32m info [39m [caliper] [default-observer] 	[send review function - 30 requests Round 0 Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+2022.03.23-12:17:10.823[32m info [39m [caliper] [default-observer] 	[send review function - 30 requests Round 0 Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+2022.03.23-12:17:10.831[32m info [39m [caliper] [report-builder] 	### Test result ###
+2022.03.23-12:17:10.844[32m info [39m [caliper] [report-builder] 	
++------------------------------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name                               | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|------------------------------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| send review function - 30 requests | 894  | 2109 | 30.0            | 33.10           | 1.42            | 12.13           | 24.5             |
++------------------------------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2022.03.23-12:17:10.846[32m info [39m [caliper] [round-orchestrator] 	Finished round 1 (send review function - 30 requests) in 122.469 seconds
+2022.03.23-12:17:10.846[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2022.03.23-12:17:10.847[32m info [39m [caliper] [report-builder] 	### All test results ###
+2022.03.23-12:17:10.848[32m info [39m [caliper] [report-builder] 	
++------------------------------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name                               | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|------------------------------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| send review function - 30 requests | 894  | 2109 | 30.0            | 33.10           | 1.42            | 12.13           | 24.5             |
++------------------------------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2022.03.23-12:17:10.869[32m info [39m [caliper] [report-builder] 	Generated report with path /hyperledger/caliper/workspace/report.html
+2022.03.23-12:17:10.869[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2022.03.23-12:17:10.870[32m info [39m [caliper] [worker-orchestrator] 	Sending exit message to connected workers
+2022.03.23-12:17:10.877[32m info [39m [caliper] [round-orchestrator] 	Benchmark finished in 753.203 seconds. Total rounds: 1. Successful rounds: 1. Failed rounds: 0.
+2022.03.23-12:17:10.877[32m info [39m [caliper] [caliper-engine] 	Skipping end command due to benchmark flow conditioning
+2022.03.23-12:17:10.877[32m info [39m [caliper] [cli-launch-manager] 	Benchmark successfully finished
+Start pushing the generated report.html and caliper.log to the git repository...
+[0;0mcaliper.log[m  [0;0mreport.html[m
+Connecting to github.com (140.82.121.4:443)
+Connecting to objects.githubusercontent.com (185.199.110.133:443)
+writing to stdout
+-                    100% |********************************| 3499k  0:00:00 ETA
+written to stdout
+Initialized empty Git repository in /hyperledger/caliper/workspace/hyperledgerlab2-reports/.git/
+Reinitialized existing Git repository in /hyperledger/caliper/workspace/hyperledgerlab2-reports/.git/
+fatal: unable to access 'https://https://gitlab.lrz.de/ge72zar/benchmarks-thesis.git/': Could not resolve host: https
+[master (root-commit) be894aa] Report Wed Mar 23 12:17:12 UTC 2022
+ 2 files changed, 24058 insertions(+)
+ create mode 100644 report_1648037832/caliper.log
+ create mode 100644 report_1648037832/report.html
+fatal: unable to access 'https://https://gitlab.lrz.de/ge72zar/benchmarks-thesis.git/': Could not resolve host: https
+The generated report.html and caliper.log have been successfully pushed to the git repository...

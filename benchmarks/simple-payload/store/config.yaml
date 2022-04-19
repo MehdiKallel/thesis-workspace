@@ -1,0 +1,32 @@
+test:
+    name: tumhash-contract-benchmark
+    description: test benchmark
+    workers:
+      type: local
+      number: 5
+    rounds:
+      - label: nothing 
+        txDuration: 60
+        rateControl: { type: fixed-rate, opts: { tps: 30 } }
+        workload:
+          {
+            module: /caliper-workload/matrix.js,
+            arguments: {contractId: simple-payload , size: 22222 },
+          }
+      - label: nothing 
+        txDuration: 60
+        rateControl: { type: fixed-rate, opts: { tps: 60 } }
+        workload:
+          {
+            module: /caliper-workload/matrix.js,
+            arguments: {contractId: simple-payload , size: 22222 },
+          }
+      - label: nothing 
+        txDuration: 60
+        rateControl: { type: fixed-rate, opts: { tps: 30 } }
+        workload:
+          {
+            module: /caliper-workload/matrix.js,
+            arguments: {contractId: simple-payload , size: 90 },
+          }
+
