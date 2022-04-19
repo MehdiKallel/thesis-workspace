@@ -1,0 +1,25 @@
+test:
+    name: basic-contract-benchmark
+    description: test benchmark
+    workers:
+      type: local
+      number: 1
+    rounds:
+      - label: check order / Pattern 1 - 30 requests
+        description: check order benchmark with 30 requests
+        txDuration: 20
+        rateControl: { type: fixed-rate, opts: { tps: 1 } }
+        workload:
+          {
+            module: /caliper-workload/verifyOrderDetailsHashP1.js,
+            arguments: {contractId: basic,assets: 30},
+          }
+      - label: check order / Pattern 1 - 100 requests
+        description: check order benchmark with 100 requests
+        txDuration: 5
+        rateControl: { type: fixed-rate, opts: { tps: 100 } }
+        workload:
+          {
+            module: /caliper-workload/verifyOrderDetailsHashP1.js,
+            arguments: {contractId: basic,assets: 600},
+          }
