@@ -1,0 +1,15 @@
+test:
+    name: basic-contract-benchmark
+    description: test benchmark
+    workers:
+      type: local
+      number: 3
+    rounds: 
+      - label: add order - 20 tps
+        txDuration: 100
+        rateControl: { type: fixed-rate, opts: { tps: 30 } }
+        workload:
+          {
+            module: /caliper-workload/populateLedgerWithOrders.js,
+            arguments: {contractId: basic , assets: 500, counter: 0},
+          }
