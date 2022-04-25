@@ -58,6 +58,7 @@ func DelLedger(stub shim.ChaincodeStubInterface, objectType string, keys []strin
 	return nil
 }
 
+// returns all assets using their composite key attributes ( can be used to retrieve all assets of a particular type using a simple key: for example "companyMat" as argument to retrieve all companies)
 func GetStateByPartialCompositeKeys(stub shim.ChaincodeStubInterface, objectType string, keys []string) (results [][]byte, err error) {
 	if len(keys) == 0 {
 
@@ -97,6 +98,7 @@ func GetStateByPartialCompositeKeys(stub shim.ChaincodeStubInterface, objectType
 	return results, nil
 }
 
+//retrieve all available drugs from the ledger, which are available
 func GetStateByPartialCompositeKeys2(stub shim.ChaincodeStubInterface, objectType string, keys []string) (results [][]byte, err error) {
 	resultIterator, err := stub.GetStateByPartialCompositeKey(objectType, keys)
 	if err != nil {
