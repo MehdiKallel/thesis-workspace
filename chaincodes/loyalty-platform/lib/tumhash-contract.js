@@ -6,9 +6,9 @@
 const { Contract } = require('fabric-contract-api');
 const crypto = require('crypto');
 
-
 class TumhashContract extends Contract {
-    async multiplyMatrix(ctx, target) {
+    //multiplication of a square matrix of size "target" filled with 3
+    async multiplyMatrix(ctx, target){
 	let newTarget = parseInt(target);
 	let a = Array(newTarget).fill(3).map(()=>Array(newTarget).fill(3));
         let b = Array(newTarget).fill(3).map(()=>Array(newTarget).fill(3));
@@ -40,5 +40,4 @@ class TumhashContract extends Contract {
            return product;
     }
 }
-
 module.exports = TumhashContract;
