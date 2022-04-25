@@ -20,20 +20,14 @@ class MyWorkload extends WorkloadModuleBase {
 		ids = require(`./ids${this.workerIndex}.json`);
 	}
 
-	async submitTransaction(){		
+	async submitTransaction(){
 		this.txIndex++;
 		let place = this.txIndex % 900;
-		const asset_properties = {
-			orderReference: String(ids[this.txIndex].id),
-			value: String('100'),
-			status: String('PENDING')
-		};
-		const asset_properties_string = JSON.stringify(asset_properties);
-		console.log(asset_properties);
+		console.log(companiesData[0].companyMat.toString());
+		console.log(ids[place].id.toString());
 		const myArgs = {
 			contractId: 'basic',
-			contractFunction: 'checkOrderPrivateP1',
-			transientMap: {'asset_properties': Buffer.from(asset_properties_string)}, 
+			contractFunction: 'checkOrderPublic', 
 			contractArguments: [companiesData[0].companyMat.toString(), ids[place].id.toString()],
 		};
 		await this.sutAdapter.sendRequests(myArgs);

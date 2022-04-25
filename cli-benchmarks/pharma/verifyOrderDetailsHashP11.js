@@ -112,6 +112,8 @@ class MyWorkload extends WorkloadModuleBase {
 		};
 		await this.sutAdapter.sendRequests(myArgs);
 	}
+
+	// optional 
 	async cleanupWorkloadModule() {
 		for (let i=0; i<drugsData.length; i++) {
 			for ( let j = 0; j < companiesData.length ; j++ ){
