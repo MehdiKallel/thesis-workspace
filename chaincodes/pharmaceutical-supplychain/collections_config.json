@@ -1,0 +1,36 @@
+[
+  {
+    "name": "assetCollection",
+    "policy": "OR('Org1MSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 1,
+    "blockToLive":1000000,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true
+ },
+  {
+    "name": "Org1MSPPrivateCollection",
+    "policy": "OR('Org1MSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 10,
+    "blockToLive":100000,
+    "memberOnlyRead": false,
+    "memberOnlyWrite": false,
+    "endorsementPolicy": {
+      "signaturePolicy": "OR('Org1MSP.member')"
+    }
+  },
+  {
+    "name": "Org2MSPPrivateCollection",
+    "policy": "OR('Org2MSP.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 10,
+    "blockToLive":100000,
+    "memberOnlyRead": false,
+    "memberOnlyWrite": false,
+    "endorsementPolicy": {
+      "signaturePolicy": "OR('Org2MSP.member')"
+    }
+  }
+ ]
+ 
