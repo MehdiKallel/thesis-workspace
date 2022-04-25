@@ -22,31 +22,31 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	function, args := stub.GetFunctionAndParameters()
 	fmt.Println("invoke is running " + function)
 
-	if function == "registerCompany" {
+	if function == "registerCompany" { //add a company asset on the ledger
 		return t.registerCompany(stub, args)
-	} else if function == "getAllCompanies" {
+	} else if function == "getAllCompanies" { //return all companies on the ledger
 		return t.getAllCompanies(stub)
-	} else if function == "getAllDrugs" {
+	} else if function == "getAllDrugs" { //return all drugs from a particular seller 
 		return t.getAllDrugs(stub)
-	} else if function == "addDrug" {
+	} else if function == "addDrug" { //add a drug to ledger 
 		return t.addDrug(stub, args)
-	} else if function == "deleteAllDrugsFromSeller" {
+	} else if function == "deleteAllDrugsFromSeller" { //delete all Drugs from a particular Seller
 		return t.deleteAllDrugsFromSeller(stub, args)
-	} else if function == "deleteAllOrdersFromSeller" {
+	} else if function == "deleteAllOrdersFromSeller" { //delete all Orders from a particular Seller
 		return t.deleteAllOrdersFromSeller(stub, args)
-	} else if function == "deleteAllShipmentsFromSeller" {
+	} else if function == "deleteAllShipmentsFromSeller" { //delete all Shipments from a particular seller 
 		return t.deleteAllShipmentsFromSeller(stub, args)
-	} else if function == "viewDrugHistory" {
+	} else if function == "viewDrugHistory" { 
 		return t.viewDrugHistory(stub, args)
-	} else if function == "createOrder" {
+	} else if function == "createOrder" { //order creation relying on key based query by default 
 		return t.createOrder(stub, args)
-	} else if function == "createOrderRichQuery" {
+	} else if function == "createOrderRichQuery" { //order creation relying on rich query 
 		return t.createOrderRichQuery(stub, args)
-	} else if function == "checkOrderPrivateP1" { // computed hash and private hash comparision
+	} else if function == "checkOrderPrivateP1" { //computed hash and private hash comparision
 		return t.verifyOrderDetails(stub, args)
 	} else if function == "createPrivateOrder" {
 		return t.createPrivateOrder(stub, args)
-	} else if function == "checkOrderPublic" { // public read verification (price public)
+	} else if function == "checkOrderPublic" { //public read verification(price public)
 		return t.checkOrderPublic(stub, args)
 	} else if function == "checkOrderPrivateP3" { // private read verification
 		return t.checkOrderPrivate(stub, args)
@@ -54,17 +54,17 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return t.checkOrderPrivateP2(stub, args)
 	} else if function == "checkOrderPrivateP4" { // private insertion verification
 		return t.checkOrderPrivateP4(stub, args)
-	} else if function == "getAllOrders" {
+	} else if function == "getAllOrders" { //get all orders from a particular seller
 		return t.getAllOrders(stub)
-	} else if function == "getAllShipments" {
+	} else if function == "getAllShipments" {//get all shipments from a particular seller
 		return t.getAllShipments(stub)
-	} else if function == "updateShipment" {
+	} else if function == "updateShipment" { //mark a shipment as delivered
 		return t.updateShipment(stub, args)
-	} else if function == "createShipment" {
+	} else if function == "createShipment" { //create a shipment asset and append drugs to it (using simple key-based query)
 		return t.createShipment(stub, args)
-	} else if function == "createShipmentRichQuery" {
+	} else if function == "createShipmentRichQuery" { //create a shipment asset and append drugs to it (using rich query)
 		return t.createShipmentRichQuery(stub, args)
-	} else if function == "Init" {
+	} else if function == "Init" { //populate ledger with drugs
 		return t.Init(stub)
 	}
 	return shim.Error("Invalid function name")
