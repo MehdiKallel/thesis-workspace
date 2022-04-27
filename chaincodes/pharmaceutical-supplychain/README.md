@@ -14,6 +14,11 @@ The Transporter is supposed to be joining all channels to be able to trace drugs
 
 The use of private data collections depends on the private data sharing pattern. When the protection of sensitive information on the same channel is desired, private data collections should be implemented. The chaincode allows you as a seller to hide the order price of one of your customers from other customers. 
 
+
+![Alt text](./images/architecture.png?raw=true "blockchain network setup")
+
+
+
 *Note: for the sake of simplicity and also because HyperledgerLab2 doesn't support the configurations of channels number, private data access control using the the client credentials (for example using GetMSPID()) wasn't implemented.*
 
 
@@ -25,7 +30,7 @@ The use of private data collections depends on the private data sharing pattern.
 ```
 
 ## Chaincode usage on HyperledgerLab-2.0
-*Prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster of 3 nodes is deployed*
+*Prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster is deployed*
 
 1. Clone the repository under /HyperLedgerLab-2.0/fabric/chaincode
 
