@@ -35,18 +35,15 @@ cp -r thesis-workspace/chaincodes/pharmaceutical-supplychain ./
 rm -r thesis-workspace
 ```
 
-2. Setup the blockchain network configuration file ```network-configuration.yaml``` under /HyperledgerLab-2.0/fabric
+2. Setup the blockchain network configuration file ```network-configuration.yaml``` under /HyperledgerLab-2.0/fabric by using the following setup:
 
 ```
 fabric_num_orgs: 3
 fabric_peers_per_org: 2
 fabric_num_orderer: 2
 stateDatabase: CouchDB
-# Batch Timeout: The amount of time to wait before creating a batch
 fabric_batch_timeout: "1s"
-# Batch Size: Controls the number of messages batched into a block ["Max Message Count", "Absolute Max Bytes", "Preferred Max Bytes"]
 fabric_batchsize: ["300", "98 MB", "10 MB"]
-# Enable tls globally in the network
 fabric_tls_enabled: false
 rule: "OutOf(1, 'Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')"        # e.g "OR('Org1MSP.member', 'Org2MSP.member')"
 channels:                   # List of channel objects
@@ -57,6 +54,14 @@ channels:                   # List of channel objects
         path: "chaincode/pharmaceutical-supplychain"      # NOTE: Relative path to Directory where chaincode file is located
         language: node
         version: v1
+
+```
+
+3. Run the blockchain network setup script:
+
+```
+cd ..
+./scripts/network_run.sh
 ```
 
 ## Contributing
