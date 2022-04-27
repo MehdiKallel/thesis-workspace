@@ -15,7 +15,7 @@ The Transporter is supposed to be joining all channels to be able to trace drugs
 The use of private data collections depends on the private data sharing pattern. When the protection of sensitive information on the same channel is desired, private data collections should be used. The chaincode allows you as a seller to hide the order price of one of your customers from other customers. 
 
 
-<img src="./images/architecture.png" width="200">
+<img src="./images/architecture.png" width="600">
 
 
 
