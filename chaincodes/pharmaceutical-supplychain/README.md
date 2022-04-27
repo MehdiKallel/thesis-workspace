@@ -64,10 +64,7 @@ cd ..
 ./scripts/network_run.sh
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+*Note: the organizations names specified in collections_config.json file should match your network organizations names*
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
