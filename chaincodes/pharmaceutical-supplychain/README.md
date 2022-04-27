@@ -12,7 +12,7 @@ This chaincode is intended to be installed on all Organizations peers and three 
 
 The Transporter is supposed to be joining all channels to be able to trace drugs, shipments and drugs from the Seller to the Buyer. 
 
-The use of private data collections depends on the private data sharing pattern. When the protection of sensitive information on the same channel is desired, private data collections should be implemented. The chaincode allows you as a seller to hide the order price of one of your customers from other customers. 
+The use of private data collections depends on the private data sharing pattern. When the protection of sensitive information on the same channel is desired, private data collections should be used. The chaincode allows you as a seller to hide the order price of one of your customers from other customers. 
 
 
 ![Alt text](./images/architecture.png?raw=true "blockchain network setup")
@@ -26,7 +26,7 @@ The use of private data collections depends on the private data sharing pattern.
 ```
 |- META-INF/statedb/couchdb/indexes/                  ... drug index used by rich queries
 |- lib/                     			      ... includes the types of data existing on the Ledger
-|- utils/               			      ... includes functions to add assets to the ledger using composite key, composte-key based queries, rich queries...
+|- utils/               			      ... includes functions to add assets to the ledger using composite key, run composte-key based queries, run rich queries...
 ```
 
 ## Chaincode usage on HyperledgerLab-2.0
