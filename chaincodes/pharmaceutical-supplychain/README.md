@@ -17,30 +17,30 @@ The use of private data collections depends on the private data sharing pattern.
 *Note: for the sake of simplicity and also because HyperledgerLab2 doesn't support the configurations of channels number, private data access control using the the client credentials (for example using GetMSPID()) wasn't implemented.*
 
 
-## Usage on HyperledgerLab-2.0
+## Folder structures
 ```
-.
-├── ...
-├── docs                    # Documentation files (alternatively `doc`)
-│   ├── TOC.md              # Table of contents
-│   ├── faq.md              # Frequently asked questions
-│   ├── misc.md             # Miscellaneous information
-│   ├── usage.md            # Getting started guide
-│   └── ...                 # etc.
-└── ...
+|- META-INF/statedb/couchdb/indexes/                  ... drug index used by rich queries
+|- lib/                     			      ... includes the types of data existing on the Ledger
+|- utils/               			      ... includes functions to add assets to the ledger using composite key, composte-key based queries, rich queries...
 ```
 
-```python
-import foobar
+## Chaincode usage on HyperledgerLab-2.0
+*prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster of 3 nodes is deployed
 
-# returns 'words'
-foobar.pluralize('word')
+Markup : 1. Clone the repository under /HyperLedgerLab-2.0/fabric/chaincode
 
-# returns 'geese'
-foobar.pluralize('goose')
+```
+git clone https://gitlab.lrz.de/ge72zar/thesis-workspace.git
+cp -r thesis-workspace/chaincodes/pharmaceutical-supplychain ./
+rm -r thesis-workspace
+```
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+Markup : 2. Setup the blockchain network configuration file ```network-configuration.yaml``` under /HyperledgerLab-2.0/fabric
+
+```
+git clone https://gitlab.lrz.de/ge72zar/thesis-workspace.git
+cp -r thesis-workspace/chaincodes/pharmaceutical-supplychain ./
+rm -r thesis-workspace
 ```
 
 ## Contributing
