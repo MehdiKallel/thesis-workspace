@@ -30,7 +30,7 @@ The use of private data collections depends on the private data sharing pattern.
 ```
 
 ## Chaincode usage on HyperledgerLab-2.0
-*Prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster of 3 nodes is deployed*
+*Prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster is deployed*
 
 1. Clone the repository under /HyperLedgerLab-2.0/fabric/chaincode
 
