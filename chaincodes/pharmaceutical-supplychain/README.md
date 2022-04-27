@@ -18,6 +18,7 @@ The use of private data collections depends on the private data sharing pattern.
 
 
 ## Usage on HyperledgerLab-2.0
+```
 .
 ├── ...
 ├── docs                    # Documentation files (alternatively `doc`)
@@ -27,7 +28,7 @@ The use of private data collections depends on the private data sharing pattern.
 │   ├── usage.md            # Getting started guide
 │   └── ...                 # etc.
 └── ...
-
+```
 
 ```python
 import foobar
