@@ -46,6 +46,18 @@
     "endorsementPolicy": {
       "signaturePolicy": "OR('OrgRetailer.member')"
     }
+  },
+  {
+    "name": "OrgTransporter",
+    "policy": "OR('OrgTransporter.member')",
+    "requiredPeerCount": 0,
+    "maxPeerCount": 10,
+    "blockToLive":100000,
+    "memberOnlyRead": false,
+    "memberOnlyWrite": false,
+    "endorsementPolicy": {
+      "signaturePolicy": "OR('OrgTransporter.member')"
+    }
   }
  ]
  
