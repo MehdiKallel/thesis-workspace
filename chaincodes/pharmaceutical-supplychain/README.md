@@ -27,7 +27,7 @@ The use of private data collections depends on the private data sharing pattern.
 ## Chaincode usage on HyperledgerLab-2.0
 *prerequisite: HyperledgerLab-2.0 is set up and a k8s cluster of 3 nodes is deployed
 
-Markup : 1. Clone the repository under /HyperLedgerLab-2.0/fabric/chaincode
+1. Clone the repository under /HyperLedgerLab-2.0/fabric/chaincode
 
 ```
 git clone https://gitlab.lrz.de/ge72zar/thesis-workspace.git
@@ -35,12 +35,28 @@ cp -r thesis-workspace/chaincodes/pharmaceutical-supplychain ./
 rm -r thesis-workspace
 ```
 
-Markup : 2. Setup the blockchain network configuration file ```network-configuration.yaml``` under /HyperledgerLab-2.0/fabric
+2. Setup the blockchain network configuration file ```network-configuration.yaml``` under /HyperledgerLab-2.0/fabric
 
 ```
-git clone https://gitlab.lrz.de/ge72zar/thesis-workspace.git
-cp -r thesis-workspace/chaincodes/pharmaceutical-supplychain ./
-rm -r thesis-workspace
+fabric_num_orgs: 3
+fabric_peers_per_org: 2
+fabric_num_orderer: 2
+stateDatabase: CouchDB
+# Batch Timeout: The amount of time to wait before creating a batch
+fabric_batch_timeout: "1s"
+# Batch Size: Controls the number of messages batched into a block ["Max Message Count", "Absolute Max Bytes", "Preferred Max Bytes"]
+fabric_batchsize: ["300", "98 MB", "10 MB"]
+# Enable tls globally in the network
+fabric_tls_enabled: false
+rule: "OutOf(1, 'Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')"        # e.g "OR('Org1MSP.member', 'Org2MSP.member')"
+channels:                   # List of channel objects
+  - name: "mychannel"
+    chaincodes:
+      - id: pharmaceutical-supplychain
+        contractID: pharmaceutical-supplychain           # NOTE: This should be unique for chaincodes across channels
+        path: "chaincode/pharmaceutical-supplychain"      # NOTE: Relative path to Directory where chaincode file is located
+        language: node
+        version: v1
 ```
 
 ## Contributing
