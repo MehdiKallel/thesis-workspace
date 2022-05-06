@@ -18,7 +18,7 @@ The use of private data collections depends on the private data sharing pattern.
 <img src="./images/architecture.png" width="600">
 
 
-<img src="./images/flow.png" width="600">
+<img src="./images/flow.png" width="400">
 
 
 *Note: for the sake of simplicity and also because HyperledgerLab2 doesn't support the configurations of channels number, private data access control using the the client credentials (for example using GetMSPID()) wasn't implemented.*
