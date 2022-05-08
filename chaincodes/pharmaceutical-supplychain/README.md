@@ -1,6 +1,6 @@
 ## Hyperledger Fabric Chaincode for drug traceability
 
-Counterfeiting drugs is a big issue in the pharmaceutical industry. The increasing public use of online pharmacies has made the monitoring of the drug supply chain process complicated. This chapter proposes a blockchain-based system that tracks drugs in the supply chain process. The proposed Chaincode makes it possible to execute transactions between different organizations without a trusted centralized authority and provides records of every transaction performed on the network. The developed Chaincode also demonstrates the use of private data collection in Hyperledger Fabric.
+Counterfeiting drugs is a big issue in the pharmaceutical industry. The increasing public use of online pharmacies has made the monitoring of the drug supply chain process complicated. This chapter proposes a blockchain-based system that tracks drugs in the supply chain process. The proposed Chaincode makes it possible to execute transactions between different organizations without a trusted centralizedauthority and provides records of every transaction performed on the network. The developed Chaincode also demonstrates the use of private data collection in Hyperledger Fabric.
 
 ## System overview
 
@@ -15,7 +15,7 @@ The Transporter is supposed to be joining all channels to be able to trace drugs
 The use of private data collections depends on the private data sharing pattern. When the protection of sensitive information on the same channel is desired, private data collections should be used. The chaincode allows you as a seller to hide the order price of one of your customers from other customers. 
 
 
-<img src="./images/architecture.png" width="600">
+<img src="./images/virtualNetwork.png" width="600">
 
 
 <img src="./images/flow.png" width="400">

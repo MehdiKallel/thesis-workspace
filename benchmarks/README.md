@@ -1,5 +1,5 @@
 ## workloads for the developped chaincodes
-this directory inclues workloads uses to assess the performance of the chaincodes functions
+this directory contains, workloads, config files,  to assess the performance of the chaincodes functions
 
 ## Pharmaceutical supplychain system
 
