@@ -13,8 +13,10 @@ this directory contains, workloads and config files to assess the performance of
 
 ## TUM-Hash
 
-- addComplaints.js: add complaints of a specific size. The payload can be specified  using the complaintsGenerator.js script under /thesis-workspace/benchmarks/pharmaceutical-supplychain/helpers 
-- sendReviewMessge.js: send a message of a specific size between 2 registered of a network
+- addComplaints.js: add complaints of a specific size. The payload can be specified  using the complaintsGenerator.js script under /thesis-workspace/benchmarks/pharmaceutical-supplychain/helpers (number of subjects on the ledger can be defined in the config file)
+- sendReviewMessge.js: send a message of a specific size between 2 registered users of a network
+
+
 
 ## Loyalty plaform
 - matrix.js: square matrix multiplication of size n (the experiment worker has control over the size of the matrix) 

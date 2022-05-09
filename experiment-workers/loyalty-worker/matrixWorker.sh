@@ -31,7 +31,7 @@ do
 		echo "****************Running experiment: $j with $currentAsset****************"
 		sleep 4s	
 
-		echo "****************populating ledger ****************"
+
 		cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"
 		rm config.yaml
 		cp store/config.yaml ./
