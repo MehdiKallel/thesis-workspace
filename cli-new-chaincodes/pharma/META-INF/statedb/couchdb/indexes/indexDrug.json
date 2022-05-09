@@ -1,8 +1,0 @@
-{
-    "index":{
-        "fields":["docType","productID", "manufacturer"]
-    },
-    "ddoc":"indexDrugDoc", 
-    "name":"indexDrug",
-    "type":"json"
-  }
