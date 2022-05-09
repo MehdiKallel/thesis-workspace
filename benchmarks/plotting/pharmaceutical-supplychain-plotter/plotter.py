@@ -4,12 +4,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import re
+import sys
+
+target = sys.argv[1]
+
+
 
 values = {'Size': None,'Succ': None, 'Fail': None, 'Send Rate (TPS)': None, 'Max Latency': None, 'Min Latency (s)' : None, 'Avg Latency (s)' : None, 'Throughput (TPS)' : None, 'Experiment' : None }
 results = pd.DataFrame()
 for name in os.listdir("./"):
-    if((".js_" in name) and (('createPrivateOrder' in name))):
-        print(name)
+    if((".js_" in name) and ((target in name))):
         for filename in os.listdir('./'+name):
             print(filename)
             if filename.endswith('.log'):
