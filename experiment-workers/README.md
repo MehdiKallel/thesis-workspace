@@ -1,5 +1,5 @@
 ## Experiments automation
-This script is intended to automate the pharmaceutical supply-chain chaincode benchmarking and plot the obtained results from Hyperledger Caliper logs.
+This directory includes scripts which are intended to automate the developed chaincodes benchmarking process and to plot the obtained results from Hyperledger Caliper logs.
 
 
 ## Example: usage of pharmaWorker on HyperledgerLab2. (instructions should be applied for every experiment worker)
