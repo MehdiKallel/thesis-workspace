@@ -7,11 +7,16 @@ This directory inclues useful scripts to plot the obtained results from Hyperled
 the current script can be extended to add a plot showing the transaction failure rates or the relation between the throughput and tranasction latency.
 
 
+
+## Instructions for the pharmaceutical supply-chain plotter
+
 run the following commands in your terminal under your project root directory:
 1. `npm install prompt-sync`
 2. `pip3 install pandas`
 3. `pip3 install seaborn`
 4. to plot results of a specifc workload `python3 plotter.py $(name of the workload).js`
+
+
 
 
 ## License

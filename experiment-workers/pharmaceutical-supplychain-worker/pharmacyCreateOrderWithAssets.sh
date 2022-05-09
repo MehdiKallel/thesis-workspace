@@ -76,6 +76,7 @@ do
 			
 
 			manager=$(kubectl get pods -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | fgrep manager)
+			
 			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"		
 			ps -ef | grep 'watcherHelper' | grep -v grep | awk '{print $2}' | xargs -r kill -9
 			
@@ -83,16 +84,8 @@ do
 			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
 			source caliper_delete.sh
 			
-			
 			sleep 10s
-			cd /home/ubuntu
-			
-			echo "*******launching watcher*******"
-			bash watcher.sh &	
-			check=$(kubectl get pods | grep "peer"| head -1 | awk '{print $3}')
-			echo $check
-			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
-			source caliper_run.sh "$chaincodeId"
+
 			manager=$(kubectl get pods -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | fgrep manager)
 			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"/"$targetDirectory"
 			echo "target is $value.log"

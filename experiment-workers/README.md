@@ -1,7 +1,8 @@
 ## Experiments automation
 This script is intended to automate the pharmaceutical supply-chain chaincode benchmarking and plot the obtained results from Hyperledger Caliper logs.
 
-## Usage of pharmaWorker on HyperledgerLab2
+
+## Example: usage of pharmaWorker on HyperledgerLab2. (instructions should be applied for every experiment worker)
 
 1. place the `pharmaWorker.sh` and  `watchHelper.sh` script into your `\home` directory
 2. run both scripts: `source pharmaWorker` and  `source watcherHelper.sh` 
