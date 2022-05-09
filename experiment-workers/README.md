@@ -10,7 +10,7 @@ This script is intended to automate the pharmaceutical supply-chain chaincode be
 
 **Note: the current script conducts an experiment with 10 companies and 20 variety of drugs and a total. Those parameters can be changed under the /benchmarks/pharmaceutical-supplychain/helpers/generateCompaniesAndDrugs.sh. The experiment is assessing the "createPrivateOrder" function. For the rest of the use cases, please use the corresponding worker.**
 
-<img src="./images/experiment-automation.png" width="400">
+<img src="./images/experiment-automation.png" width="700">
 
 
 ## License
