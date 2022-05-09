@@ -44,7 +44,7 @@ do
 			echo "****************Running experiment: $j with $currentAsset****************"
 			sleep 4s	
 			
-			echo "****************populating ledger ****************"
+			echo "****************populating ledger with drugs****************"
 			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"
 			rm config.yaml
 			cp populatorConfig/config.yaml ./
@@ -53,43 +53,32 @@ do
 			python3 scriptConfigAssetsUpdated.py $goal
 			cd ..
 			rm config.yaml
-			mv newConfig.yaml config.yaml		
-			
-			
+			mv newConfig.yaml config.yaml			
 			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
-			echo "************deleting network************"	
-			source network_delete.sh
-			sleep 10s
+
 			echo "************deleting caliper************"
-			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
 			source caliper_delete.sh	
 			
-			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"
-			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
-			echo "************running network_run************"
-			source network_run.sh
-
-			sleep 15s
+			
 			cd /home/ubuntu
 			bash watcherHelper.sh &
-			echo "************running caliper_run for populator************"
-			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
-			source caliper_run.sh "$chaincodeId"
 
-			manager=$(kubectl get pods -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | fgrep manager)
-			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"
-			mkdir "${jsFile}_${currentTPS}_${j}_results_addDrug"
-			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"/"${jsFile}_${currentAsset}_${j}_results_addDrug"
-			kubectl logs $manager > "$j.log"
-			ps -ef | grep 'watcherHelper' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+			
 			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"
 			rm config.yaml
 			cp function/config.yaml ./
-			cd helpers
-			python3 scriptConfigFunction.py $jsFile
-			cd ..
-			rm config.yaml
+			bash scriptConfigFunctionFix.py $jsFile
 			mv newConfig.yaml config.yaml
+			
+			echo "************running caliper_run for ordre creation************"
+			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
+			source caliper_run.sh "$chaincodeId"
+			
+
+			manager=$(kubectl get pods -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | fgrep manager)
+			cd /home/ubuntu/HyperLedgerLab-2.0/caliper/benchmarks/"$chaincodeId"		
+			ps -ef | grep 'watcherHelper' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+			
 			echo "************deleting caliper from  populator************"
 			cd /home/ubuntu/HyperLedgerLab-2.0/scripts
 			source caliper_delete.sh

@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#this script will delete Hyperledger Caliper in case the benchmarking gets stuck (due to nodes crash)
+
 while true
 do
         target=$(kubectl get pods | grep "caliper-manager"| awk '{print $5}')
